@@ -1,4 +1,4 @@
-package JavaCore.src;
+package JavaCore.src.Hw2;
 
 /**
  * Класс для выполнения домашнего задания по уроку 2: Данные и функции.

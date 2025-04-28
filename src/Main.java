@@ -1,6 +1,8 @@
 package JavaCore.src;
 
-import static JavaCore.src.HomeworkLesson2.*;
+import JavaCore.src.TaskSelector.Task;
+
+import java.util.Scanner;
 
 /**
  * Основной класс программы
@@ -11,20 +13,26 @@ public class Main {
      *
      * @param args аргументы командной строки
      */
+
     public static void main(String[] args) {
-        int[] array1 = {2, 1, 2, 3, 4};
-        int[] array2 = {2, 2, 0};
-        int[] array3 = {1, 3, 5};
-        int[] array4 = {1, 0, 0, 5};
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("countEvens(array1) = " + countEvens(array1)); // 3
-        System.out.println("countEvens(array2) = " + countEvens(array2)); // 3
-        System.out.println("countEvens(array3) = " + countEvens(array3)); // 0
+        System.out.println("Выберите задание для запуска:");
+        for (Task task : Task.values()) {
+            System.out.println(task.getNumber() + " - " + task.getDescription());
+        }
 
-        System.out.println("differenceMaxMin(array1) = " + differenceMaxMin(array1)); // 4 - 1 = 3
+        int choice = scanner.nextInt();
+        Task selectedTask = Task.getByNumber(choice);
 
-        System.out.println("hasAdjacentZeros(array1) = " + hasAdjacentZeros(array1)); // false
-        System.out.println("hasAdjacentZeros(array4) = " + hasAdjacentZeros(array4)); // true
-        System.out.println("Hello, world!");
+        if (selectedTask != null) {
+            selectedTask.run();
+        } else {
+            System.out.println("Неверный выбор. Пожалуйста, введите корректный номер.");
+        }
+
+        scanner.close();
     }
+
+
 }
