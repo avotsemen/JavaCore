@@ -3,24 +3,17 @@ package JavaCore.src.Hw3;
 /**
  * Класс, представляющий руководителя (наследник сотрудника).
  */
-public class Manager extends Employee {
 
-    public Manager(String name, double salary, int year, int month, int day) {
-        super(name, salary, year, month, day);
-    }
+    public class Manager extends Employee {
+        public Manager(String name, double salary) {
+            super(name, salary);
+        }
 
-    /**
-     * Статический метод для повышения зарплаты всем сотрудникам, кроме руководителей.
-     *
-     * @param employees массив сотрудников
-     * @param percent   процент повышения
-     */
-    public static void raiseSalaryForAll(Employee[] employees, double percent) {
-        for (Employee e : employees) {
-            if (!(e instanceof Manager)) {
-                e.raiseSalary(percent);
+        public static void promoteEmployees(Employee[] employees, double bonus) {
+            for (Employee employee : employees) {
+                if (!(employee instanceof Manager)) {
+                    employee.setSalary(employee.getSalary() + bonus);
+                }
             }
         }
     }
-}
-

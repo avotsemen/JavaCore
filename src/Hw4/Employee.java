@@ -1,16 +1,14 @@
-package JavaCore.src.Hw3;
-
-/**
- * Класс, представляющий сотрудника.
- */
+package JavaCore.src.Hw4;
 
 public class Employee {
     private String name;
     private double salary;
+    private Customer.Gender gender;
 
-    public Employee(String name, double salary) {
+    public Employee(String name, double salary, Customer.Gender gender) {
         this.name = name;
         this.salary = salary;
+        this.gender = gender;
     }
 
     public String getName() {
@@ -27,5 +25,13 @@ public class Employee {
 
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    public Customer.Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Customer.Gender gender) {
+        this.gender = gender;
     }
 }
