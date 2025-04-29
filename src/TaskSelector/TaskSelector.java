@@ -12,6 +12,7 @@ public class TaskSelector {
         tasks.put(TaskType.HOMEWORK_2, new TaskHw2());
         tasks.put(TaskType.HOMEWORK_3, new TaskHw3());
         tasks.put(TaskType.HOMEWORK_4, new TaskHw4());
+        tasks.put(TaskType.HOMEWORK_5, new TaskHw5());
     }
 
     public void selectAndRunTask() {
